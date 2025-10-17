@@ -5,7 +5,7 @@ on:
 
 jobs:
   TEST-JOB:
-    runs-on: [self-hosted, Linux, X64]
+    runs-on: self-hosted
 
     steps:  # 👈 This was missing!
       - name: Checkout the main branch
@@ -22,7 +22,7 @@ jobs:
 
   build-job:
     needs: [TEST-JOB]
-    runs-on: [self-hosted, Linux, X64]
+    runs-on: self-hosted
 
     steps:  # 👈 This was also missing!
       - name: Check permissions on directory

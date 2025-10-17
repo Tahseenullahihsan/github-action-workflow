@@ -1,13 +1,13 @@
 name: workflow-for on premise server
 
-on: 
+on:
   push:
 
 jobs:
   TEST-JOB:
     runs-on: self-hosted
 
-    steps:  # 👈 This was missing!
+    steps:
       - name: Checkout the main branch
         uses: actions/checkout@v3
 
@@ -24,6 +24,6 @@ jobs:
     needs: [TEST-JOB]
     runs-on: self-hosted
 
-    steps:  # 👈 This was also missing!
+    steps:
       - name: Check permissions on directory
         run: ls -lrt

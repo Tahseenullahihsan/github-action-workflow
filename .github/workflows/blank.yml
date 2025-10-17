@@ -1,14 +1,14 @@
 name: workflow-for on premise server
 
-on: 
+on:
   push:
 
-jobs: 
+jobs:
   TEST-JOB:
-    runs-on: [self-hosted, Linux, X64]
+    runs-on: self-hosted
 
     steps:
-      - name: Check out the repository
+      - name: Checkout the main branch
         uses: actions/checkout@v3
 
       - name: Print working directory
@@ -17,5 +17,13 @@ jobs:
       - name: List all files
         run: ls -a
 
-      - name: Print Hello
+      - name: Print hello
         run: echo "hello world" >> hello.txt
+
+  build-job:
+    needs: TEST-JOB
+    runs-on: self-hosted
+
+    steps:
+      - name: Check permissions on directory
+        run: ls -lrt

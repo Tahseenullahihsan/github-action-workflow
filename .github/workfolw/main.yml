@@ -21,7 +21,7 @@ jobs:
         run: echo "hello world" >> hello.txt
 
   build-job:
-    needs: [TEST-JOB]
+    needs: TEST-JOB
     runs-on: self-hosted
 
     steps:

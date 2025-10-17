@@ -27,4 +27,3 @@ jobs:
     steps:  # 👈 This was also missing!
       - name: Check permissions on directory
         run: ls -lrt
-# i have jsut updated the run.sh file and to run itin the bg mode

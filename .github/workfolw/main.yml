@@ -1,0 +1,15 @@
+name: workflow-for on premise server 
+on: push
+jobs: 
+  TEST-JOB:
+  runs-on: [self-hosted, Linux, X64]
+    - name: to chek the main branch
+      runs: actions/chekout@main
+    - name: print the working directory
+      runs:  pwd
+    - name : print all  the files 
+      runs: ls -a 
+    - name: print  hello 
+      runs: echo  "hello world" >> hello.txt
+
+

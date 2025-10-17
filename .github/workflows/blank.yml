@@ -1,0 +1,21 @@
+name: workflow-for on premise server
+
+on: 
+  push:
+
+jobs: 
+  TEST-JOB:
+    runs-on: [self-hosted, Linux, X64]
+
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v3
+
+      - name: Print working directory
+        run: pwd
+
+      - name: List all files
+        run: ls -a
+
+      - name: Print Hello
+        run: echo "hello world" >> hello.txt

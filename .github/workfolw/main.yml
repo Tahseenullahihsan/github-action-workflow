@@ -1,19 +1,30 @@
-name: workflow-for on premise server 
-on: push
-jobs: 
-  TEST-JOB:
-  runs-on: [self-hosted, Linux, X64]
-    - name: to chek the main branch
-      runs: actions/chekout@main
-    - name: print the working directory
-      runs:  pwd
-    - name : print all  the files 
-      runs: ls -a 
-    - name: print  hello 
-      runs: echo  "hello world" >> hello.txt
+name: workflow-for on premise server
 
-  # this job will contain that to test all the repository and their permission to the user and groups
-  builde-job:
-  runs-on: [self-hosted, Linux, X64]
-   - name: to chek all the permssion on the directyory 
-     runs: ls -lrt
+on: 
+  push:
+
+jobs:
+  TEST-JOB:
+    runs-on: [self-hosted, Linux, X64]
+
+    steps:
+      - name: Checkout the main branch
+        uses: actions/checkout@v3
+
+      - name: Print working directory
+        run: pwd
+
+      - name: List all files
+        run: ls -a
+
+      - name: Print hello
+        run: echo "hello world" >> hello.txt
+
+  # This job will test permissions
+  build-job:
+    needs: [TEST-JOB]
+    runs-on: [self-hosted, Linux, X64]
+
+    steps:
+      - name: Check permissions on directory
+        run: ls -lrt

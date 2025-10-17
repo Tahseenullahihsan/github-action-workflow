@@ -12,4 +12,8 @@ jobs:
     - name: print  hello 
       runs: echo  "hello world" >> hello.txt
 
-
+  # this job will contain that to test all the repository and their permission to the user and groups
+  builde-job:
+  runs-on: [self-hosted, Linux, X64]
+   - name: to chek all the permssion on the directyory 
+     runs: ls -lrt

@@ -1,8 +1,9 @@
 name: workflow-for on premise server
 
 on:
-    schedule:
-     - cron: "*/1 * * * *"
+  workflow_dispatch: 
+    # schedule:
+    #  - cron: "*/1 * * * *"
   # push:
 
 jobs:

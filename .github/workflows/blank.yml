@@ -33,9 +33,13 @@ jobs:
 
   build-deploy:
     needs: build-job
+    concurrency:
+     group: github-woirkflow
+     cancel-in-progress: true
     runs-on: self-hosted
     steps:
       - name: Check permissions on directory
         run: echo "hello world" >> hello.txt
+         sleep 6000s
         
   # correc t the indentation of the  deploy job

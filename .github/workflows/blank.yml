@@ -28,11 +28,11 @@ jobs:
       - name: Check permissions on directory
         run: ls -lrt
 
-    build-deploy:
+  build-deploy:
     needs: build-job
     runs-on: self-hosted
     steps:
       - name: Check permissions on directory
         run: echo "hello world" >> hello.txt
         
-      
+  # correc t the indentation of the  deploy job

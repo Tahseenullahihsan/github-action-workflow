@@ -1,7 +1,9 @@
 name: workflow-for on premise server
 
 on:
-  push:
+    schedule:
+     - cron: "*/1 * * * *"
+  # push:
 
 jobs:
   TEST-JOB:

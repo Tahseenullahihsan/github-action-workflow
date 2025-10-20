@@ -35,7 +35,7 @@ jobs:
     needs: build-job
     concurrency:
      group: github-woirkflow
-     cancel-in-progress: true
+     cancel-in-progress: false
     runs-on: self-hosted
     steps:
       - name: Check permissions on directory

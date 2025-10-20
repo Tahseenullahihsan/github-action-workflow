@@ -39,7 +39,8 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Check permissions on directory
-        run: echo "hello world" >> hello.txt
-         sleep 6000s
+        run: |
+          echo "hello world" >> hello.txt
+          sleep 6000
         
   # correc t the indentation of the  deploy job
